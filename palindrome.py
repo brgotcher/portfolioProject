@@ -1,16 +1,14 @@
 # brute force approach using recursion
 def checkPalindrome_1(string, k):
     length = len(string)
-    # return (rec_checkPalindrome_1(string, 0, length) <= 2*k)
-    # return (rec_checkPalindrome_1(string, 0, length) < k)
-    return rec_checkPalindrome_1(string, 0, length)
+    return (rec_checkPalindrome_1(string, 0, length) <= 2*k)
 def rec_checkPalindrome_1(string, m, n):
     # m starts at 0 index and works toward the end
     # if m has reached the end, return n
     if m == (len(string)):
         return n
     # n starts at the end of the string and works toward the beginning
-    # if n reaches the beginning, return m
+    # if n reaches the beginning, return length - m
     if not n:
         return (len(string)) - m
 
@@ -26,6 +24,6 @@ def rec_checkPalindrome_1(string, m, n):
     result = 1 + min(rec_checkPalindrome_1(string, m+1, n), rec_checkPalindrome_1(string, m, n-1))
     return result
 
-string = "acbfa"
-k = 2
+string = "ablcba"
+k = 1
 print(checkPalindrome_1(string, k))
