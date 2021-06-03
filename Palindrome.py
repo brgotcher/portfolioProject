@@ -70,6 +70,6 @@ def rec_checkPalindrome_2(string, memo, m, n):
     return memo[(m, n)]
 
 
-string = "xabccbla"
+string = "abccblav"
 k = 2
 print(checkPalindrome_2(string, k))
