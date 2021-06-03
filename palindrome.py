@@ -7,12 +7,12 @@ def checkPalindrome_1(string, k):
 def rec_checkPalindrome_1(string, m, n):
     # m starts at 0 index and works toward the end
     # if m has reached the end, return n
-    if m == (len(string)-1):
-        return n-1
+    if m == (len(string)):
+        return n
     # n starts at the end of the string and works toward the beginning
     # if n reaches the beginning, return m
-    if n == 1:
-        return (len(string)-1) - m
+    if not n:
+        return (len(string)) - m
 
     # if the elements at the two current indices match,
     # they do not need to be removed.
@@ -26,6 +26,6 @@ def rec_checkPalindrome_1(string, m, n):
     result = 1 + min(rec_checkPalindrome_1(string, m+1, n), rec_checkPalindrome_1(string, m, n-1))
     return result
 
-string = "abcxdcbfaf"
+string = "acbfa"
 k = 2
 print(checkPalindrome_1(string, k))
